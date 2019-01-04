@@ -39,7 +39,7 @@ namespace Pallesgavebod
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseMiddleware<IpMiddelware>();
+            app.UseMiddleware<IpMiddleware>();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -51,7 +51,7 @@ namespace Pallesgavebod
             }
 
             app.UseHttpsRedirection();
-            app.UseMiddleware<TimerMiddelware>();
+            app.UseMiddleware<TimerMiddleware>();
             //benytter root.
             app.UseStaticFiles();
             //

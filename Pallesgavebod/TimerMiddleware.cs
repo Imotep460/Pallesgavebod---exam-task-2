@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AuctionHouse
 {
-    public class TimerMiddelware
+    public class TimerMiddleware
     {
         private RequestDelegate _next;
 
-        public TimerMiddelware(RequestDelegate next)
+        public TimerMiddleware(RequestDelegate next)
         {
             _next = next;
         }

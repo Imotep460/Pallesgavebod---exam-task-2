@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AuctionHouse
 {
-    public class IpMiddelware
+    public class IpMiddleware
     {
         private RequestDelegate _next;
 
-        public IpMiddelware(RequestDelegate next)
+        public IpMiddleware(RequestDelegate next)
         {
             _next = next;
         }
