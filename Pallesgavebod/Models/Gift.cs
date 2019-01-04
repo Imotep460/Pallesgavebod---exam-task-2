@@ -9,16 +9,14 @@ namespace Pallesgavebod.Models
 {
     public class Gift
     {
-        [Required]
+        [Key]
         [DisplayName("Gift id")]
         public int GiftNumber { get; set; }
-        [Required]
+
         [DisplayName("Gift name")]
         public string Title { get; set; }
-        [Required(ErrorMessage = "Please add a description for the item in question")]
         [DisplayName("Gift Description")]
         public string Description { get; set; }
-        [Required]
         [DisplayName("Date item was added in system")]
         public DateTime CreationDate { get; set; }
         public bool BoyGift { get; set; }
