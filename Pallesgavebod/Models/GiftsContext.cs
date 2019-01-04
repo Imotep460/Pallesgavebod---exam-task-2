@@ -8,7 +8,7 @@ namespace Pallesgavebod.Models
 {
     public class GiftsContext : DbContext
     {
-        public DbSet<Gift> Gifts { get; set; }
+        //public DbSet<Gift> Gifts { get; set; }
 
         //public DbSet<> { get; set; }
 
