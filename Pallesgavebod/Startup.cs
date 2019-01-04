@@ -36,13 +36,14 @@ namespace Pallesgavebod
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext")));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseMiddleware<IpMiddleware>();
+            //app.UseMiddleware<IpMiddleware>();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -53,7 +54,7 @@ namespace Pallesgavebod
                 app.UseHsts();
             }
 
-            app.UseMiddleware<TimerMiddleware>();
+            //app.UseMiddleware<TimerMiddleware>();
             //benytter root.
             app.UseStaticFiles();
             //
