@@ -33,7 +33,7 @@ namespace Pallesgavebod.Controllers
         //}
 
         // GET: Gifts/Create
-        public ActionResult Create(GiftItemDTO gift)
+        public ActionResult Create(Gift gift)
         {
             var newitem = new Gift();
 
@@ -46,11 +46,11 @@ namespace Pallesgavebod.Controllers
             _context.Gifts.Add(newitem);
             _context.SaveChanges();
 
-            return Ok();
+            return View();
         }
 
         [HttpGet]
-        public IActionResult boys()
+        public IActionResult Boys(Gift gift)
         {
             var boyitems = from a in _context.Gifts
                            where a.BoyGift == true
@@ -58,23 +58,6 @@ namespace Pallesgavebod.Controllers
 
             return View(boyitems);
         }
-
-        // POST: Gifts/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
-
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
 
         // GET: Gifts/Edit/5
         public ActionResult Edit(int id)
